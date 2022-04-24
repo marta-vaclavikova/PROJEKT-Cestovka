@@ -1,0 +1,234 @@
+@charset "UTF-8";
+/* intuitivnější box-sizing pro všechny prvky na stránce */
+html {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #000000;
+}
+
+.main {
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+}
+.header__logo {
+  width: 235px;
+  height: 30px;
+  margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header__logo {
+    padding-left: 20px;
+  }
+}
+
+.menu {
+  size: 18px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0;
+}
+.menu__item {
+  padding: 20px;
+  text-decoration: none;
+  color: #f03000;
+}
+.menu__item:hover, .menu__item:focus {
+  background-color: #f03000;
+  color: white;
+}
+
+.tours {
+  color: white;
+  display: grid;
+  grid-template-rows: 240px 150px 150px;
+  gap: 20px;
+}
+.tours__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.tours__tours__description {
+  flex: 0 0 50%;
+}
+.tours__title {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+.tours__top {
+  flex: 0 0 50%;
+}
+.tours__price {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
+  background-color: #f03000;
+}
+.tours__palms {
+  background: url(/images/palmy.png) no-repeat center/cover;
+}
+.tours__lake {
+  background: url(/images/jezero2.png) no-repeat center/cover;
+}
+.tours__bike {
+  background: url(/images/nakole.png) no-repeat center/cover;
+}
+.tours__canyon {
+  background: url(/images/podkova.png) no-repeat center/cover;
+}
+.tours__canaria {
+  background: url(/images/zatoka.png) no-repeat center/cover;
+}
+.tours__boat {
+  background: url(/images/lodicka.png) no-repeat center/cover;
+}
+@media screen and (min-width: 768px) {
+  .tours {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 380px 180px;
+  }
+  .tours__item--highlighted {
+    grid-column: 1/-1;
+  }
+}
+@media screen and (min-width: 960px) {
+  .tours {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 180px 180px;
+  }
+  .tours__palms {
+    background: url(/images/palmy@2x.png) no-repeat center/cover;
+    grid-column: 1/3;
+    grid-row: 1/-1;
+  }
+  .tours__lake {
+    background: url(/images/jezero2@2x.png) no-repeat center/cover;
+    grid-column: 3/4;
+  }
+  .tours__bike {
+    background: url(/images/nakole@2x.png) no-repeat center/cover;
+  }
+  .tours__canyon {
+    background: url(/images/podkova@2x.png) no-repeat center/cover;
+  }
+  .tours__canaria {
+    background: url(/images/zatoka@2x.png) no-repeat center/cover;
+  }
+  .tours__boat {
+    background: url(/images/lodicka@2x.png) no-repeat center/cover;
+    grid-column: 2/4;
+    grid-row: 1/-1;
+  }
+}
+
+.service {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.service__item {
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.service__title {
+  color: #f03000;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.service__icon {
+  align-items: flex-start;
+  margin-right: 20px;
+}
+.service__description {
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .service {
+    grid-template-columns: 50% 50%;
+    display: grid;
+    gap: 20px;
+    text-align: center;
+  }
+  .service__item {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service__icon {
+    margin: 0 0 20px 0;
+  }
+}
+@media screen and (min-width: 960px) {
+  .service {
+    grid-template-columns: repeat(4, 25%);
+  }
+}
+
+.section__title {
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.news__item {
+  background-color: #f0f0f0;
+  padding: 20px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
+}
+.news__date {
+  color: #888888;
+}
+.news__title {
+  color: #f03000;
+  margin: 10px 0 10px 0;
+}
+.news__content {
+  margin: 0;
+}
+@media screen and (min-width: 960px) {
+  .news__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+.footer {
+  background-color: #444444;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}/*# sourceMappingURL=style.css.map */
