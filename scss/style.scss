@@ -22,6 +22,25 @@ body {
   color: #000000;
 }
 
+h1,
+h2 {
+  margin: 0;
+  font-family: $font-title;
+}
+
+h1 {
+  color: $c-title;
+  font-size: 36px;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+img {
+  width: 100%;
+}
+
 .main {
   padding: 20px;
 }
@@ -40,6 +59,9 @@ body {
 
     &__logo {
       padding-left: 20px;
+    }
+    &--text {
+      border-bottom: 2px solid $c-title;
     }
   }
 }
@@ -72,7 +94,7 @@ body {
 
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: unset; 
+    grid-template-rows: unset;
     grid-auto-rows: 180px;
 
     & > :first-child {
@@ -87,6 +109,34 @@ body {
     &--alt > :first-child {
       grid-column: 2 / span 2;
     }
+
+    &--text {
+      grid-template-columns: 1fr;
+
+      & > :first-child {
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+  }
+
+  &--text {
+    grid-template-rows: 150px;
+
+    & .zajezd__popis {
+      display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+      & .zajezd__popis {
+        display: block;
+      }
+    }
+    @media screen and (min-width: 960px) {
+      & .zajezd__popis {
+        display: none;
+      }
+    }
   }
 }
 
@@ -95,47 +145,47 @@ body {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-}
-.zajezd__nazev {
-  margin-top: 0;
-  font-size: 20px;
-  font-weight: 600;
-  font-family: $font-title;
-}
-.zajezd__info > :last-child {
-  margin-bottom: 0;
-}
-.zajezd__info {
-  color: white;
-  padding: 20px;
-  background-color: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.1)
-  );
-}
-.zajezd__cena {
-  padding: 20px;
-  span {
-    display: inline-block;
-    background-color: #f03000;
-    color: white;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 400;
+
+  &__nazev {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 600;
     font-family: $font-title;
   }
+  &__info > :last-child {
+    margin-bottom: 0;
+  }
+  &__info {
+    color: white;
+    padding: 20px;
+    background-color: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)
+    );
+  }
+  &__cena {
+    padding: 20px;
+    span {
+      display: inline-block;
+      background-color: #f03000;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: $font-title;
+    }
+  }
+  &__foto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
 }
-.zajezd__foto {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  object-fit: cover;
-}
-
 .service {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -221,4 +271,13 @@ body {
   padding: 20px;
   text-align: center;
   margin-top: 40px;
+}
+
+.content {
+  @media screen and (min-width: 960px) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding-top: 40px;
+  }
 }
