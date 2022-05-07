@@ -1,0 +1,24 @@
+
+@use 'variables';
+
+.header {
+  text-align: center;
+  &__logo {
+    width: 235px;
+    height: 30px;
+    margin-top: 40px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+
+    &__logo {
+      padding-left: 20px;
+    }
+    &--text {
+      border-bottom: 2px solid variables.$c-title;
+      margin-bottom: 40px;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@use 'variables';
+
+/* intuitivnější box-sizing pro všechny prvky na stránce */
+html {
+  box-sizing: border-box;
+}
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #000000;
+}
+
+h1,
+h2, h5 {
+  margin: 0;
+  font-family: variables.$font-title;
+}
+
+h1 {
+  color: variables.$c-title;
+  font-size: 36px;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+.main {
+  padding: 20px;
+}
+
+.section__title {
+  color: #000000;
+  font-family: variables.$font-title;
+  font-weight: 600;
+}
+
+.wrapper {
+  img {
+    width: 100%;
+  }
+  @media screen and (min-width: 960px) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+  }
+}

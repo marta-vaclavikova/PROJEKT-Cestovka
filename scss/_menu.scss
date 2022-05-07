@@ -1,0 +1,21 @@
+@use 'variables';
+
+.menu {
+  size: 18px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0;
+  &__item {
+    padding: 20px;
+    text-decoration: none;
+    color: variables.$c-title;
+    &:hover,
+    &:focus {
+      background-color: variables.$c-title;
+      color: white;
+    }
+  }
+}

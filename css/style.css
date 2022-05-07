@@ -20,7 +20,7 @@ body {
 }
 
 h1,
-h2 {
+h2, h5 {
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
@@ -34,12 +34,29 @@ h2 {
   font-weight: 600;
 }
 
-img {
-  width: 100%;
+h5 {
+  font-size: 14px;
 }
 
 .main {
   padding: 20px;
+}
+
+.section__title {
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.wrapper img {
+  width: 100%;
+}
+@media screen and (min-width: 960px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+  }
 }
 
 .header {
@@ -60,6 +77,7 @@ img {
   }
   .header--text {
     border-bottom: 2px solid #f03000;
+    margin-bottom: 40px;
   }
 }
 
@@ -175,6 +193,103 @@ img {
      object-fit: cover;
 }
 
+.travel-info {
+  display: grid;
+  grid-template-rows: 240px;
+  grid-auto-rows: auto;
+  gap: 20px;
+  grid-auto-flow: dense;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .travel-info {
+    grid-template-rows: 380px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 960px) {
+  .travel-info {
+    grid-column: span 3;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+.travel-info__photo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .travel-info__photo {
+    grid-column: span 2;
+  }
+}
+@media screen and (min-width: 960px) {
+  .travel-info__photo {
+    grid-column: span 1;
+    grid-row: span 4;
+    margin-bottom: 0;
+  }
+}
+.travel-info__phrase {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .travel-info__phrase {
+    font-size: 48px;
+  }
+}
+.travel-info__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.travel-info__point {
+  background-color: #E5E5E5;
+  padding: 20px;
+}
+.travel-info__title {
+  text-transform: uppercase;
+  color: #888888;
+}
+.travel-info__content {
+  margin: 0;
+  margin-top: 6px;
+}
+.travel-info--price {
+  background-color: #f03000;
+  color: white;
+}
+.travel-info--price h5 {
+  color: white;
+}
+.travel-info--price p {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.hotel-photos {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+.hotel-photos img {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .hotel-photos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .service {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -183,6 +298,7 @@ img {
   background-color: #f0f0f0;
   display: flex;
   align-items: flex-start;
+  gap: 20px;
   padding: 20px;
   margin-bottom: 10px;
 }
@@ -193,16 +309,12 @@ img {
   margin: 0;
   margin-bottom: 10px;
 }
-.service__icon {
-  align-items: flex-start;
-  margin-right: 20px;
-}
 .service__description {
   margin: 0;
 }
 @media screen and (min-width: 768px) {
   .service {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
     display: grid;
     gap: 20px;
     text-align: center;
@@ -217,14 +329,8 @@ img {
 }
 @media screen and (min-width: 960px) {
   .service {
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(4, 1fr);
   }
-}
-
-.section__title {
-  color: #000000;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
 }
 
 .news__item {
@@ -258,13 +364,4 @@ img {
   padding: 20px;
   text-align: center;
   margin-top: 40px;
-}
-
-@media screen and (min-width: 960px) {
-  .content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-    padding-top: 40px;
-  }
 }/*# sourceMappingURL=style.css.map */

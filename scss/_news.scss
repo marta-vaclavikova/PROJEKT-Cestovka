@@ -1,0 +1,29 @@
+@use 'variables';
+
+.news {
+  &__item {
+    background-color: variables.$c-background-service;
+    padding: 20px;
+    font-size: 16px;
+    font-family: variables.$font-title;
+    margin-bottom: 20px;
+  }
+  &__date {
+    color: #888888;
+  }
+  &__title {
+    color: variables.$c-title;
+    margin: 10px 0 10px 0;
+  }
+  &__content {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 960px) {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+}
